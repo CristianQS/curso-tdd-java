@@ -23,4 +23,12 @@ public class FizzBuzzTest {
 
 		assertEquals("Fizz", result.get(2));
 	}
+
+	@Test
+	public void multiple_of_five_is_Buzz() {
+
+		var  result = FizzBuzz.ConvertToFizzBuzz();
+
+		assertThat(result.get(4),Matchers.is("Buzz"));
+	}
 }
