@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import java.util.Arrays;
-
 class GildedRose {
 
 	public static final String BAKCSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
@@ -19,23 +17,23 @@ class GildedRose {
 					&& !item.name.equals(BAKCSTAGE_PASS)) {
 				if (item.quality > 0) {
 					if (!item.name.equals(SULFURAS)) {
-						item.quality = item.quality - 1;
+						item.decreaseQuality(1);
 					}
 				}
 			} else {
 				if (item.quality < 50) {
-					item.quality = item.quality + 1;
+					item.increaseQuality(1);
 
 					if (item.name.equals(BAKCSTAGE_PASS)) {
 						if (item.sellIn < 11) {
 							if (item.quality < 50) {
-								item.quality = item.quality + 1;
+								item.increaseQuality(1);
 							}
 						}
 
 						if (item.sellIn < 6) {
 							if (item.quality < 50) {
-								item.quality = item.quality + 1;
+								item.increaseQuality(1);
 							}
 						}
 					}
@@ -51,15 +49,15 @@ class GildedRose {
 					if (!item.name.equals(BAKCSTAGE_PASS)) {
 						if (item.quality > 0) {
 							if (!item.name.equals(SULFURAS)) {
-								item.quality = item.quality - 1;
+								item.decreaseQuality(1);
 							}
 						}
 					} else {
-						item.quality = item.quality - item.quality;
+						item.decreaseQuality(item.quality);
 					}
 				} else {
 					if (item.quality < 50) {
-						item.quality = item.quality + 1;
+						item.increaseQuality(1);
 					}
 				}
 			}
