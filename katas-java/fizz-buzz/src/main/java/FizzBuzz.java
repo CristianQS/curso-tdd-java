@@ -8,6 +8,8 @@ public class FizzBuzz {
         for (int i = 1; i <= 100; i++) {
             if(i % 3 == 0) {
                 listOfFizzBuzz.add("Fizz");
+            } else {
+                listOfFizzBuzz.add(String.valueOf(i));
             }
         }
         return listOfFizzBuzz;
