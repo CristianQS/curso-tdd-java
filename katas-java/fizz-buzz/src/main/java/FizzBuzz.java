@@ -6,14 +6,22 @@ public class FizzBuzz {
     public static List<String> ConvertToFizzBuzz() {
         var listOfFizzBuzz = new ArrayList<String>();
         for (int i = 1; i <= 100; i++) {
-            if(i % 3 == 0) {
+            if (isFizz(i)) {
                 listOfFizzBuzz.add("Fizz");
-            } else if( i % 5 == 0) {
+            } else if (isBuzz(i)) {
                 listOfFizzBuzz.add("Buzz");
             } else {
                 listOfFizzBuzz.add(String.valueOf(i));
             }
         }
         return listOfFizzBuzz;
+    }
+
+    private static boolean isFizz(int i) {
+        return i % 3 == 0;
+    }
+
+    private static boolean isBuzz(int i) {
+        return i % 5 == 0;
     }
 }
